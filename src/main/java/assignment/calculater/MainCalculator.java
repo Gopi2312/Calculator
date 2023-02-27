@@ -1,6 +1,5 @@
 package assignment.calculater;
 import java.util.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 public class MainCalculator 
 {
@@ -28,28 +27,28 @@ public class MainCalculator
         		{
         			obj = new Add(result,num2);
         			obj.calculate();
-        			result = obj.getAns();
+        			result = obj.ans;
         			break;	
         		}
         		case '-':
         		{
         			obj = new Sub(result,num2);
         			obj.calculate();
-        			result = obj.getAns();
+        			result = obj.ans;
         			break;	
         		}
         		case '*':
         		{
         			obj = new Mul(result,num2);
         			obj.calculate();
-        			result = obj.getAns();
+        			result = obj.ans;
         			break;	
         		}
         		case '/':
         		{
         			obj = new Div(result,num2);
         			obj.calculate();
-        			result = obj.getAns();
+        			result = obj.ans;
         			break;	
         		}
         		case 'e':
@@ -62,74 +61,8 @@ public class MainCalculator
         			break;
         		}
         	}
-        	System.out.println(result);
+        	String res = String.valueOf(result);
+        	logger.info(res);
     	}while(true);
     }
-}
-abstract class Calculator 
-{
-	double num1;
-	double num2;
-	double ans;
-	Calculator(double x , double y)
-	{
-		this.num1 = x;
-		this.num2 = y;
-	}
-	public double getAns() {
-		return ans;
-	}
-	public void setAns(double ans) {
-		this.ans = ans;
-	}
-	public abstract void calculate();
-}
-class Add extends Calculator
-{
-	Add(double x , double y)
-	{
-		super(x,y);
-	}
-	public void calculate()
-	{
-		this.ans = this.num1 + this.num2;
-		setAns(this.ans);
-	}
-}
-class Sub extends Calculator
-{
-	Sub(double x , double y)
-	{
-		super(x,y);
-	}
-	public void calculate()
-	{
-		this.ans = this.num1 - this.num2;
-		setAns(this.ans);
-	}
-}
-class Mul extends Calculator
-{
-	Mul(double x , double y)
-	{
-		super(x,y);
-	}
-	public void calculate()
-	{
-		this.ans = this.num1 * this.num2;
-		setAns(this.ans);
-	}
-}
-class Div extends Calculator
-{
-	Logger logger = Logger.getLogger("hi");
-	Div(double x , double y)
-	{
-		super(x,y);
-	}
-	public void calculate()
-	{
-			this.ans = this.num1 / this.num2;
-			setAns(this.ans);
-	}
 }
