@@ -54,6 +54,7 @@ public class MainCalculator
         		case 'e':
         		{
         			System.exit(0);
+                    break;
         		}
         		default:
         		{
