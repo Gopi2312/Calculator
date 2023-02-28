@@ -15,7 +15,7 @@ public class MainCalculator
     	num1 = sc.nextDouble();
     	Calculator obj;
     	result = num1;
-    	do
+    	while(true)
     	{
         	logger.info(msg);
         	num2 = sc.nextDouble();
@@ -64,6 +64,6 @@ public class MainCalculator
         	}
         	String res = String.valueOf(result);
         	logger.info(res);
-    	}while(true);
+    	}
     }
 }
